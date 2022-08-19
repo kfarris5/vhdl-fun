@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../DSPslice.gen/sources_1/ip/dsp_macro_1/sim/dsp_macro_1.vhd" \
+
+nosort
