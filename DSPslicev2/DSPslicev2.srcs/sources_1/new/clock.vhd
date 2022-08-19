@@ -35,12 +35,13 @@ process(clk,reset)--counter for clock divider, just need clk and reset in sensit
             cnt<=0;--sets cnt to 0
         elsif rising_edgE(clk) then--looking at the rising edge of the system clock
             if (cnt = countMax-1)  then--see if the counter has counted up to the generic passed in
-                cnt <= 0;--sets to 0 if counter is at max
+                delay <= inputSignal;   --sets to 0 if counter is at max
             else
                 cnt <= cnt+1;--adds one to counter till it reaches the maximium amount
+                delay <= '0';      --pulse out once the counter has reached it's max
             end if;
         end if;
 end process;
-delay <= inputSignal when cnt=countMax-1 else '0';--pulse out once the counter has reached it's max
+
 end Behavioral;
 
